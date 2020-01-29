@@ -46,11 +46,3 @@ class Taro_card:
         self.Name = Name
         self.Position = Position
         self.R_position = R_position
-
-if __name__ == "__main__":
-    deck = Taro_deck()
-    for x in deck.list:
-        print(x.Name)
-    deck.shuffle()
-    for x in deck.list:
-        print(x.Name)
