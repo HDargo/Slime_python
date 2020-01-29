@@ -1,4 +1,9 @@
-from Taro.spread import spread_interface
+from Taro.spread.spread_interface import spread_interface
+
 
 class spread(spread_interface):
-    pass
+    def func1(self):
+        pass
+
+    def func2(self):
+        pass
