@@ -39,9 +39,9 @@ class system:
             self.spread(num)
 
     def spread(self, num):
-        #spread = self.spread_list[num - 1]
-        spread = three()
+        spread = self.spread_list[num - 1]
         spread.func1()
+
 
 if __name__ == "__main__":
     while system.Flag:
