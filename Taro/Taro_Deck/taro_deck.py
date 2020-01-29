@@ -27,12 +27,13 @@ class Taro_deck:
         eighteen = Taro_card(18,"The Moon","anxiety, ambiguity, confusion","relief of anxiety,clarity,he end of chaos")
         nineteen = Taro_card(19,"The Sun","bright future,Satisfaction","postpone,failure")
         twenty = Taro_card(20,"Judgement","Resurrection, improvement",",regret")
-        twenty_one = Taro_card
+        twenty_one = Taro_card(21,"The world","Completion,Perfection"."unfinished,uncertain")
         return [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen,
                 sixteen, seventeen, eighteen, nineteen, twenty, twenty_one]
 
     def shuffle(self):
         self.list = random.shuffle(self.list)
+        print("덱을 섞었습니다")
 
 class Taro_card:
     def __init__(self, Num,Name,Position,R_position):
