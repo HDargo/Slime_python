@@ -1,9 +1,9 @@
-from Taro.Taro_Deck import taro_deck
+from Taro.Taro_Deck.taro_deck import Taro_deck as t
 
 
 class spread_interface:
     def __init__(self):
-        self.deck = taro_deck.Taro_deck
+        self.deck = t()
 
     def func1(self):
         raise NotImplementedError()
