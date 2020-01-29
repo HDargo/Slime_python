@@ -43,6 +43,5 @@ class system:
 
 
 if __name__ == "__main__":
-    print(ccs)
     while system.Flag:
         system()
