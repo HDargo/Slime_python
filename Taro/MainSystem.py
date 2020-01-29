@@ -1,9 +1,9 @@
-import Taro.spread.one_card_spread as one
-import Taro.spread.three_card_spread as three
-import Taro.spread.Celtic_Cross_spread as ccs
-import Taro.spread.tree_of_life_card_spread as tree
-import Taro.spread.Horse_hoof_spread as horse
-import Taro.spread.full_moon_spread as moon
+from Taro.spread.one_card_spread import spread as one
+from Taro.spread.three_card_spread import spread as three
+from Taro.spread.Celtic_Cross_spread import spread as ccs
+from Taro.spread.tree_of_life_card_spread import spread as tree
+from Taro.spread.Horse_hoof_spread import spread as horse
+from Taro.spread.full_moon_spread import spread as moon
 
 """
 
@@ -40,6 +40,7 @@ class system:
 
     def spread(self, num):
         spread = self.spread_list[num - 1]
+        spread.func1()
 
 
 if __name__ == "__main__":
