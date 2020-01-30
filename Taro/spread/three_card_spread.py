@@ -9,6 +9,14 @@ class spread(spread_interface):
         print("그 외 숫자를 입력하시면 취소됩니다")
         print("=====================================================================")
         temp = str(input("Choice : "))
-        num = temp.split()
-        for x in num
-            print(self.deck.list[int(num)].Name)
+        Opt = self.Optimization(temp)
+        if 3 < len(Opt):
+            print("오류!")
+            self.OptionPrint()
+        else:
+            pass
+    def Optimization(self,dtemp):
+        num = dtemp.split()
+        for x in num:
+            print(self.deck.list[int(x)].Name)
+        return num
