@@ -17,7 +17,7 @@ class system:
     Flag = True
 
     def __init__(self):
-        self.spread_list = [one, three, ccs, tree, horse, moon]
+        self.spread_list = [one(), three(), ccs(), tree(), horse(), moon()]
         self.OptionPrint()
 
     def OptionPrint(self):
@@ -40,12 +40,9 @@ class system:
             self.spread(num)
 
     def spread(self, num):
-        spread = self.spread_list[num - 1]
-        spread.func1()
+        self.spread_list[0].OptionPrint()  # run spread
 
 
 if __name__ == "__main__":
-    deck = t()
-    print(deck.list)
     while system.Flag:
         system()
