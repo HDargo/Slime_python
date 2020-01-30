@@ -30,19 +30,28 @@ class system:
         self.deckList = []
 
     def GameStart(self):
-        print("플레이 할 최대 인공지능 인원 수를 입력하세요 (최소 3명 최대 8명)")
-        playNum = int(input("입력 >>>"))
-        if playNum > 8 or playNum < 3:  # 에러
-            print("3명에서 8명 사이로 입력해주세요")
+        try:
+            print("플레이 할 최대 인공지능 인원 수를 입력하세요 (최소 3명 최대 8명)")
+            playNum = int(input("입력 >>>"))
+            if playNum > 8 or playNum < 3:  # 에러
+                print("3명에서 8명 사이로 입력해주세요")
+                self.GameStart()
+            else:
+                self.createObject(playNum)  # 플레이어 및 인공지능 생성
+                self.deck_shuffle()  # 덱 생성 및 분배
+                self.sequence()
+        except ValueError:
+            print("숫자를 입력해주세요")
             self.GameStart()
-        else:
-            self.createObject(playNum)
-            self.deck_shuffle()
+
+    def sequence(self):
+        pass
 
     def deck_shuffle(self):
         print("덱 셔플 중...")
         self.deck_generator()
         self.deck_share()
+        time.sleep(2)
         print("셔플 완료")
 
     def deck_generator(self):
@@ -73,7 +82,6 @@ class system:
         random.shuffle(self.deckList)
         n = 0
         for x in self.deckList:
-            print("n=", n)
             self.playerList[n].card_append(x)
             n += 1
             if n == len(self.playerList):
