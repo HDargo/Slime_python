@@ -10,13 +10,13 @@ class spread(spread_interface):
         print("=====================================================================")
         temp = str(input("Choice : "))
         Opt = self.Optimization(temp)
-        if 3 < len(Opt):
+        if 3 != len(Opt):
             print("오류!")
             self.OptionPrint()
         else:
             pass
     def Optimization(self,dtemp):
         num = dtemp.split()
-        for x in num:
+        for x in list(set(num)):
             print(self.deck.list[int(x)].Name)
-        return num
+        return list(set(num))
