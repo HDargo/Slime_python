@@ -5,11 +5,8 @@ from Taro.spread.tree_of_life_card_spread import spread as tree
 from Taro.spread.Horse_hoof_spread import spread as horse
 from Taro.spread.full_moon_spread import spread as moon
 
-"""
 
-메인 시스템 접속 - 메뉴 출력 - 옵션 선택 - 스프레드 진입
-
-"""
+# TODO 메인 시스템 접속 - 메뉴 출력 - 옵션 선택 - 스프레드 진입
 
 
 class system:
@@ -32,14 +29,18 @@ class system:
         self.Choice()
 
     def Choice(self):
-        num = int(input("Choice : "))
-        if num == 7:
-            system.Flag = False
-        else:
-            self.spread(num)
+        try:
+            num = int(input("Choice : "))
+            if num == 7:
+                system.Flag = False
+            else:
+                self.spread(num)
+        except ValueError:
+            print("숫자를 입력해주세요")
+            self.OptionPrint()
 
     def spread(self, num):
-        self.spread_list[num-1].OptionPrint()  # run spread
+        self.spread_list[num - 1].OptionPrint()  # run spread
 
 
 if __name__ == "__main__":
