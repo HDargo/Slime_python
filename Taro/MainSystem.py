@@ -4,7 +4,6 @@ from Taro.spread.Celtic_Cross_spread import spread as ccs
 from Taro.spread.tree_of_life_card_spread import spread as tree
 from Taro.spread.Horse_hoof_spread import spread as horse
 from Taro.spread.full_moon_spread import spread as moon
-from Taro.Taro_Deck.taro_deck import Taro_deck as t
 
 """
 
