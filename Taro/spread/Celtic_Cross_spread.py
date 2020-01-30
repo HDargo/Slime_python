@@ -35,4 +35,4 @@ class spread(spread_interface):
 
         for x in range(10):
             print(CelticDesc[x])
-            DescPrint(deck[opt[x]])
+            self.DescPrint(self.deck[Opt[x]])

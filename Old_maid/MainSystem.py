@@ -82,4 +82,4 @@ class system:
 
 if __name__ == "__main__":
     system().GameStart()
-    #TODO 덱 나누기까지 완료. 플레이어와 ai들의 카드 뽑기 구현하기
+    # TODO 덱 나누기까지 완료. 플레이어와 ai 들의 카드 뽑기 구현하기
