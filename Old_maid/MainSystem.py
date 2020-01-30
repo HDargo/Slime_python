@@ -24,24 +24,25 @@ from Old_maid.character.player import player
 
 class system:
     def __init__(self):
+        self.p = player()
+        self.ai = ai()
         self.playerList = []
         self.deckList = []
 
     def GameStart(self):
-        print("플레이 할 최대 인원 수를 입력하세요 (최소 3명 최대 8명)")
+        print("플레이 할 최대 인공지능 인원 수를 입력하세요 (최소 3명 최대 8명)")
         playNum = int(input("입력 >>>"))
-        if playNum > 8 or playNum < 3:
+        if playNum > 8 or playNum < 3:  # 에러
             print("3명에서 8명 사이로 입력해주세요")
-            self.createObject(playNum)
             self.GameStart()
         else:
+            self.createObject(playNum)
             self.deck_shuffle()
 
     def deck_shuffle(self):
         print("덱 셔플 중...")
         self.deck_generator()
-        time.sleep(3)
-
+        self.deck_share()
         print("셔플 완료")
 
     def deck_generator(self):
@@ -64,20 +65,21 @@ class system:
         self.deckList.append("▶JOKER◀")
 
     def createObject(self, playNum):
-        self.playerList.append(player())
+        self.playerList.append(self.p)
         for x in range(playNum):
-            self.playerList.append(ai())
+            self.playerList.append(self.ai)
 
     def deck_share(self):
         random.shuffle(self.deckList)
         n = 0
         for x in self.deckList:
-            if n > len(self.playerList):
-                n = 0
-            self.playerList[n].append(x)
+            print("n=", n)
+            self.playerList[n].card_append(x)
             n += 1
-            pass
+            if n == len(self.playerList):
+                n = 0
 
 
 if __name__ == "__main__":
     system().GameStart()
+    #TODO 덱 나누기까지 완료. 플레이어와 ai들의 카드 뽑기 구현하기
