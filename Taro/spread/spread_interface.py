@@ -11,11 +11,17 @@ class spread_interface:
     def Generator(self):
         self.deck = t()
 
-    def Optimization(self,dtemp):
+    def Optimization(self, dtemp, max):
         num = dtemp.split()
-        for x in list(set(num)):
-            print(self.deck.list[int(x)].Name)
-        return list(set(num))
+        if max == len(num):
+            for x in num:
+                if int(x) >= 21:
+                    return "ERROR"
+                if int(x) <= 0:
+                    return "ERROR"
+            return num
+        else:
+            return "ERROR"
 
     def DescPrint(self, card):
         print(card[0]+"\t"+card[1])
