@@ -3,7 +3,6 @@ import random
 
 class Taro_deck:
     def __init__(self):
-        self.list = []
         self.list = self.Generator()
 
     def Generator(self):
