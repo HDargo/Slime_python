@@ -10,3 +10,9 @@ class spread_interface:
 
     def Generator(self):
         self.deck = t()
+
+    def Optimization(self,dtemp):
+        num = dtemp.split()
+        for x in list(set(num)):
+            print(self.deck.list[int(x)].Name)
+        return list(set(num))

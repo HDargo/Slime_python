@@ -15,8 +15,3 @@ class spread(spread_interface):
             self.OptionPrint()
         else:
             pass
-    def Optimization(self,dtemp):
-        num = dtemp.split()
-        for x in list(set(num)):
-            print(self.deck.list[int(x)].Name)
-        return list(set(num))
