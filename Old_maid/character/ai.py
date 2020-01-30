@@ -1,4 +1,5 @@
 class ai:
+
     def __init__(self):
         self.deck = []
 
