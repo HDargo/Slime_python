@@ -40,7 +40,7 @@ class system:
             self.spread(num)
 
     def spread(self, num):
-        self.spread_list[0].OptionPrint()  # run spread
+        self.spread_list[1].OptionPrint()  # run spread
 
 
 if __name__ == "__main__":
