@@ -14,5 +14,8 @@ class spread_interface:
     def Optimization(self,dtemp):
         num = dtemp.split()
         for x in list(set(num)):
-            print(self.deck.list[int(x)].Name)
+            if int(x) < 22:
+                pass
+            else:
+                return "ERROR"
         return list(set(num))

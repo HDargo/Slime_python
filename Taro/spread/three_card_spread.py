@@ -10,6 +10,11 @@ class spread(spread_interface):
         print("=====================================================================")
         temp = str(input("Choice : "))
         Opt = self.Optimization(temp)
+        if list != type(Opt):
+            print("오류!")
+            self.OptionPrint()
+        else:
+            pass
         if 3 != len(Opt):
             print("오류!")
             self.OptionPrint()
