@@ -1,5 +1,5 @@
 from Taro.spread.spread_interface import spread_interface
-
+from Taro.Taro_Deck.taro_deck import Taro_deck as shuffle
 
 class spread(spread_interface):
     def OptionPrint(self):
