@@ -1,6 +1,8 @@
 import time
+import random
 from Old_maid.character.ai import ai
 from Old_maid.character.player import player
+
 """
 
 도둑잡기
@@ -22,6 +24,7 @@ from Old_maid.character.player import player
 
 class system:
     def __init__(self):
+        self.playerList = []
         self.deckList = []
 
     def GameStart(self):
@@ -29,6 +32,7 @@ class system:
         playNum = int(input("입력 >>>"))
         if playNum > 8 or playNum < 3:
             print("3명에서 8명 사이로 입력해주세요")
+            self.createObject(playNum)
             self.GameStart()
         else:
             self.deck_shuffle()
@@ -58,16 +62,22 @@ class system:
                     a += str(y)
                 self.deckList.append(a)
         self.deckList.append("▶JOKER◀")
-        for x in self.deckList:
-            print(x)
 
-    def __abs__(self):
-        pass
+    def createObject(self, playNum):
+        self.playerList.append(player())
+        for x in range(playNum):
+            self.playerList.append(ai())
+
+    def deck_share(self):
+        random.shuffle(self.deckList)
+        n = 0
+        for x in self.deckList:
+            if n > len(self.playerList):
+                n = 0
+            self.playerList[n].append(x)
+            n += 1
+            pass
 
 
 if __name__ == "__main__":
-    ai = ai()
-    player = player()
-    ai.print()
-    player.print()
     system().GameStart()
