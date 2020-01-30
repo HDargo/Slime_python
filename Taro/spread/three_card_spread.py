@@ -13,3 +13,5 @@ class spread(spread_interface):
         if list != type(Opt):
             print("오류!")
             self.OptionPrint()
+        else:
+            pass
