@@ -11,8 +11,15 @@ class spread(spread_interface):
         print("=====================================================================")
         temp = input("Choice : ")
         Opt = self.Optimization(temp)
-        if len(Opt) != 1:
+        if list != type(Opt):
             print("오류!")
             self.OptionPrint()
         else:
-            print(self.deck.list[Opt].Name)
+            pass
+        if 1 != len(Opt):
+            print("오류!")
+            self.OptionPrint()
+        else:
+            pass
+        self.DescPrint(deck[Opt])
+

@@ -14,8 +14,10 @@ class spread_interface:
     def Optimization(self,dtemp):
         num = dtemp.split()
         for x in list(set(num)):
-            if int(x) < 22:
-                pass
-            else:
-                return "ERROR"
+            print(self.deck.list[int(x)].Name)
         return list(set(num))
+
+    def DescPrint(self, card):
+        print(card[0]+"\t"+card[1])
+        print("Upright:\t"+card[2])
+        print("Reversed:\t"+card[3])
