@@ -13,7 +13,7 @@ class spread_interface:
 
     def Optimization(self, dtemp, max):
         num = dtemp.split()
-        numc = list(set(dtemp))
+        numc = list(set(num))
         if max == len(num):
             if len(numc) == len(num):
                 for x in num:
