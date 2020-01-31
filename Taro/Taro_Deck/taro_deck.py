@@ -45,3 +45,4 @@ class Taro_card:
         self.Name = Name
         self.Position = Position
         self.R_position = R_position
+

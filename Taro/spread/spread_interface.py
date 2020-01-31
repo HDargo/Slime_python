@@ -27,3 +27,5 @@ class spread_interface:
         print(card[0]+"\t"+card[1])
         print("Upright:\t"+card[2])
         print("Reversed:\t"+card[3])
+
+
