@@ -14,12 +14,9 @@ class spread(spread_interface):
         if list != type(Opt):
             print("오류!")
             self.OptionPrint()
-        else:
-            pass
-        if 1 != len(Opt):
+        elif 1 != len(Opt):
             print("오류!")
             self.OptionPrint()
         else:
-            pass
-        self.DescPrint(self.deck[Opt])
+            self.DescPrint(self.deck[Opt])
 

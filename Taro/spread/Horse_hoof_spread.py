@@ -12,15 +12,14 @@ class spread(spread_interface):
             "4. \t 힘을 주는것과 일을 해쳐나갈 지략",
             "5. \t 결과"]
         print("=====================================================================")
-        print("0 ~ 21 까지의 카드 중 1개를 선택 해 주세요.")
+        print("horse_hoof")
+        print("0 ~ 21 까지의 카드 중 5개를 선택 해 주세요.")
         print("그 외 숫자를 입력하시면 취소됩니다")
         print("=====================================================================")
-        num = int(input("Choice : "))
-        print(self.deck.list[num].Name)
         temp = input("Choice : ")
         Opt = self.Optimization(temp, 5)
         if list != type(Opt):
             print("오류!")
             self.OptionPrint()
         else:
-            pass
+            print("horse_hoof test comple")
