@@ -20,11 +20,7 @@ class spread(spread_interface):
         temp = input("Choice : ")
         Opt = self.Optimization(temp, 5)
         if list != type(Opt):
-            print("오류!" )
+            print("오류!")
             self.OptionPrint()
         else:
             pass
-
-        for x in range(5):
-            print(HorseDesc[x])
-            self.DescPrint(self.deck[Opt[x]])

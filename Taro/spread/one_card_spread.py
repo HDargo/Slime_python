@@ -23,4 +23,3 @@ class spread(spread_interface):
             pass
         self.DescPrint(self.deck[Opt])
 
-
