@@ -21,6 +21,4 @@ class spread(spread_interface):
             self.OptionPrint()
         else:
             pass
-        self.DescPrint(self.deck[Opt])
-
-
+        self.DescPrint(self.deck.list[])

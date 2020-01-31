@@ -13,19 +13,22 @@ class spread_interface:
 
     def Optimization(self, dtemp, max):
         num = dtemp.split()
+        numc = list(set(dtemp))
         if max == len(num):
-            for x in num:
-                if int(x) >= 21:
-                    return "ERROR"
-                if int(x) <= 0:
-                    return "ERROR"
-            return num
+            if len(numc) == len(num):
+                for x in num:
+                    if int(x) >= 21:
+                        return "ERROR"
+                    if int(x) <= 0:
+                        return "ERROR"
+                return num
+            return "ERROR"
         else:
             return "ERROR"
 
     def DescPrint(self, card):
-        print(card[0]+"\t"+card[1])
-        print("Upright:\t"+card[2])
-        print("Reversed:\t"+card[3])
+        print(card.Num + "\t" + card.Name)
+        print("Upright:\t" + card.Position)
+        print("Reversed:\t" + card.R_position)
 
 
