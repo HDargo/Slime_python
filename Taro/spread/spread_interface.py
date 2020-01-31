@@ -26,9 +26,7 @@ class spread_interface:
         else:
             return "ERROR"
 
-    def DescPrint(self, card):
-        print(card.Num + "\t" + card.Name)
-        print("Upright:\t" + card.Position)
-        print("Reversed:\t" + card.R_position)
-
-
+    def DescPrint(self, num):
+        print(self.deck.list[num].Num, "\t", self.deck.list[num].Name)
+        print("Upright:\t", self.deck.list[num].Position)
+        print("Reversed:\t", self.deck.list[num].R_position)

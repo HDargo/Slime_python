@@ -12,7 +12,7 @@ class spread(spread_interface):
             "4. \t 힘을 주는것과 일을 해쳐나갈 지략",
             "5. \t 결과"]
         print("=====================================================================")
-        print("horse_hoof")
+        print("말 발굽 스프래드")
         print("0 ~ 21 까지의 카드 중 5개를 선택 해 주세요.")
         print("그 외 숫자를 입력하시면 취소됩니다")
         print("=====================================================================")
@@ -22,4 +22,6 @@ class spread(spread_interface):
             print("오류!")
             self.OptionPrint()
         else:
-            print("horse_hoof test comple")
+            for x in range(len(Opt)):
+                print(Opt[int(x)])
+                self.DescPrint(int(x))
