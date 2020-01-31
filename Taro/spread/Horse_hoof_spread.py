@@ -23,5 +23,5 @@ class spread(spread_interface):
             self.OptionPrint()
         else:
             for x in range(len(Opt)):
-                print(Opt[int(x)])
+                print(HorseDesc[x]5)
                 self.DescPrint(int(x))
