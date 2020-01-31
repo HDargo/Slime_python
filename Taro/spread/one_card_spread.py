@@ -10,7 +10,7 @@ class spread(spread_interface):
         print("그 외 숫자를 입력하시면 취소됩니다")
         print("=====================================================================")
         temp = input("Choice : ")
-        Opt = self.Optimization(temp)
+        Opt = self.Optimization(temp,1)
         if list != type(Opt):
             print("오류!")
             self.OptionPrint()
@@ -21,5 +21,5 @@ class spread(spread_interface):
             self.OptionPrint()
         else:
             pass
-        self.DescPrint(deck[Opt])
+        self.DescPrint(self.deck[Opt])
 
