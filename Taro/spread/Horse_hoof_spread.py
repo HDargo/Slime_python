@@ -18,13 +18,8 @@ class spread(spread_interface):
         num = int(input("Choice : "))
         print(self.deck.list[num].Name)
         temp = input("Choice : ")
-        Opt = self.Optimization(temp)
+        Opt = self.Optimization(temp, 5)
         if list != type(Opt):
-            print("오류!")
-            self.OptionPrint()
-        else:
-            pass
-        if 5 != len(Opt):
             print("오류!")
             self.OptionPrint()
         else:
