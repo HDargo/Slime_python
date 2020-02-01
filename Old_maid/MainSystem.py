@@ -45,7 +45,10 @@ class system:
             self.GameStart()
 
     def sequence(self):
-        pass
+        for plainer in self.playerList:  # 플레이어 리스트 돌리기
+            print("==========================")
+            for x in plainer.deck:
+                print(x)  # 플레이어들 카드 확인. 개발 후 삭제 필수
 
     def deck_shuffle(self):
         print("덱 셔플 중...")
