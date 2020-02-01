@@ -46,6 +46,9 @@ class system:
 
     def sequence(self):
         for plainer in self.playerList:  # 플레이어 리스트 돌리기
+            if len(plainer.deck) == 0:
+                self.playerList.remove(plainer)
+                print(plainer, "의 카드는 0장이 되었습니다")
             print("==========================")
             for x in plainer.deck:
                 print(x)  # 플레이어들 카드 확인. 개발 후 삭제 필수
