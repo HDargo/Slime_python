@@ -3,6 +3,8 @@ from Taro.spread.spread_interface import spread_interface
 
 class spread(spread_interface):
     def OptionPrint(self):
+        self.deck.Generator()
+        self.deck.shuffle()
         print("=====================================================================")
         print("보름달 스프레드")
         print("0 ~ 21 까지의 카드 중 7개를 선택 해 주세요.")
