@@ -21,18 +21,11 @@ class spread(spread_interface):
         print("그 외 숫자를 입력하시면 취소됩니다")
         print("=====================================================================")
         temp = input("Choice : ")
-        Opt = self.Optimization(temp)
+        Opt = self.Optimization(temp, 10)
         if list != type(Opt):
             print("오류!")
             self.OptionPrint()
         else:
-            pass
-        if 10 != len(Opt):
-            print("오류!")
-            self.OptionPrint()
-        else:
-            pass
-
-        for x in range(10):
-            print(CelticDesc[x])
-            self.DescPrint(self.deck[Opt[x]])
+            for x in range(len(Opt)):
+                print(CelticDesc[x])
+                self.DescPrint(int(x))
