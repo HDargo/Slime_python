@@ -28,5 +28,5 @@ class spread_interface:
 
     def DescPrint(self, num):
         print(self.deck.list[num].Num, "\t", self.deck.list[num].Name)
-        print("Upright:\t", self.deck.list[num].Position)
-        print("Reversed:\t", self.deck.list[num].R_position)
+        print("정방향:\t", self.deck.list[num].Position)
+        print("역방향:\t", self.deck.list[num].R_position)
