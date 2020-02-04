@@ -45,13 +45,25 @@ class system:
             self.GameStart()
 
     def sequence(self):
-        for plainer in self.playerList:  # 플레이어 리스트 돌리기
-            if len(plainer.deck) == 0:
-                self.playerList.remove(plainer)
-                print(plainer, "의 카드는 0장이 되었습니다")
-            print("==========================")
-            for x in plainer.deck:
-                print(x)  # 플레이어들 카드 확인. 개발 후 삭제 필수
+        flag = True
+        while flag:
+            if self.playerList.__len__() == 1:
+                print("게임 종료")
+                print("마지막 승자는", self.playerList[0], "입니다")
+                flag = False
+            for plainer in self.playerList:  # 플레이어 리스트 돌리기
+                if len(plainer.deck) == 0:
+                    self.playerList.remove(plainer)
+                    print(plainer, "의 카드는 0장이 되었습니다")
+                print("==========================")
+                # if self.playerList.index(plainer) == self.playerList.__len__()-1:  # 만약 끝번호 인덱스 차례면
+                #     select = plainer.card_select(self.playerList[0].deck.__len__())
+                #     plainer.card_append(self.playerList[0].deck[select])
+                #     plainer.deck_delete()
+                # else:
+                #     select = plainer.card_select(len(self.playerList[self.playerList.index(plainer) + 1].deck))
+                #     plainer.card_append(select)
+                #     plainer.deck_delete()
 
     def deck_shuffle(self):
         print("덱 셔플 중...")

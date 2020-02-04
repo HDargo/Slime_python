@@ -16,6 +16,5 @@ class ai:
         for x in self.deck:
             for z in self.deck:
                 if x[1:] == z[1:]:
-                    print('AI', self.deck)
                     self.deck.remove(x)
                     self.deck.remove(z)
