@@ -1,3 +1,4 @@
+import random
 class ai:
 
     def __init__(self):
@@ -5,3 +6,14 @@ class ai:
 
     def card_append(self, card):
         self.deck.append(card)
+
+    def card_select(self, next_list_len):
+        for x in self.deck:
+            for z in self.deck:
+                if x[1:] == z[1:]:
+                    print('AI',self.deck)
+                    self.deck.remove(x)
+                    self.deck.remove(z)
+                else:
+                    pass
+        return random.randint(0, next_list_len - 1)
