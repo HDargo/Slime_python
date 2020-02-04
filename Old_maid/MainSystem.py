@@ -32,9 +32,15 @@ class system:
         self.total = 0
 
     def GameStart(self):
-        # try:
+        playNum = 0
+        try:
             print("플레이 할 최대 인공지능 인원 수를 입력하세요 (최소 3명 최대 8명)")
             playNum = int(input("입력 >>>"))
+
+        except ValueError:
+            print("숫자를 입력해주세요")
+            self.GameStart()
+        finally:
             if playNum > 8 or playNum < 3:  # 에러
                 print("3명에서 8명 사이로 입력해주세요")
                 self.GameStart()
@@ -42,10 +48,6 @@ class system:
                 self.createObject(playNum)  # 플레이어 및 인공지능 생성
                 self.deck_shuffle()  # 덱 생성 및 분배
                 self.sequence()
-        # except ValueError as e:
-        #     print("숫자를 입력해주세요",e)
-        #     self.GameStart()
-
     def sequence(self):
         while self.flag:
             self.playerCheck()
