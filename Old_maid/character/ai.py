@@ -13,8 +13,15 @@ class ai:
         return random.randint(0, next_list_len - 1)
 
     def deck_delete(self):
+        checkx = 0
         for x in self.deck:
-            for z in self.deck:
-                if x[1:] == z[1:]:
+            checkx = checkx + 1
+            listx = []
+            for y in range(len(self.deck)):
+                listx.append(y)
+            listx.remove(checkx-1)
+            for z in listx:
+                if x[1:] == self.deck[z][1:]:
+                    self.deck.remove(self.deck[z])
                     self.deck.remove(x)
-                    self.deck.remove(z)
+                    break
