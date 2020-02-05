@@ -1,6 +1,5 @@
 import random
 
-
 class ai:
 
     def __init__(self):
@@ -24,4 +23,17 @@ class ai:
                 if x[1:] == self.deck[z][1:]:
                     self.deck.remove(self.deck[z])
                     self.deck.remove(x)
+                    break
+        self.deck_check()
+
+    def deck_check(self):
+        for x in self.deck:
+            checkx = self.deck.index(x)
+            listx = []
+            for y in range(len(self.deck)):
+                listx.append(y)
+            listx.remove(checkx)
+            for z in listx:
+                if x[1:] == self.deck[z][1:]:
+                    self.deck_delete()
                     break
