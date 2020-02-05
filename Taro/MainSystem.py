@@ -6,9 +6,6 @@ from Taro.spread.Horse_hoof_spread import spread as horse
 from Taro.spread.full_moon_spread import spread as moon
 
 
-# TODO 메인 시스템 접속 - 메뉴 출력 - 옵션 선택 - 스프레드 진입
-
-
 class system:
     Flag = True
 
