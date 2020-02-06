@@ -9,7 +9,10 @@ class ai:
         self.deck.append(card)
 
     def card_select(self, next_list_len):
-        return random.randint(0, next_list_len - 1)
+        if next_list_len <= 1:
+            return 0
+        else:
+            return random.randint(0, next_list_len - 1)
 
     def deck_delete(self):
         checkx = 0

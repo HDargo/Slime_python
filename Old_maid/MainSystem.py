@@ -25,11 +25,10 @@ from Old_maid.character.player import player
 class system:
     def __init__(self):
         self.p = player()
-        self.ai = ai()
         self.playerList = []
         self.deckList = []
         self.flag = True
-        self.total = 0
+        self.total = 1
 
     def GameStart(self):
         playNum = 0
@@ -56,42 +55,37 @@ class system:
             time.sleep(1)
 
     def card_select(self):
-        for idx in range(len(self.playerList)):
-            if len(self.playerList[idx].deck) == 0:
-                self.playerList.pop(idx)
-                print(self.total, "번째로 끝났습니다")
-                self.total += 1
-            if idx == len(self.playerList) - 1:
-                print("끝번호")
-                select = self.playerList[idx].card_select(len(self.playerList[0].deck))
-                self.playerList[idx].card_append(self.playerList[0].deck.pop(select))
-                self.playerList[idx].deck_delete()
+        flag = True
+        idx = 0
+        le = self.playerList.__len__()
+        while flag:
+            if self.playerList.__len__() == 1:
+                flag = False
+
+            if idx >= le:
+                idx = 0
+
+            if idx > le - 1:
+                next_card_len = self.playerList[idx + 1].deck.__len__()
+                select = self.playerList[idx].card_select(next_card_len)
+                next_card = self.playerList[idx + 1].deck.pop(select)
+                self.playerList[idx].card_append(next_card)
             else:
-                print("일반")
-                select = self.playerList[idx].card_select(len(self.playerList[idx + 1].deck))
-                self.playerList[idx].card_append(self.playerList[idx + 1].deck.pop(select))
-                self.playerList[idx].deck_delete()
-        # for plainer in self.playerList:  # 플레이어 리스트 돌리기
-        #     print("planiter's index = ",self.playerList.index(plainer))
-        #     print("planiter +1 's index = ", self.playerList.index(plainer)+1)
-        # if len(plainer.deck) == 0:
-        #     self.playerList.remove(plainer)
-        #     print(plainer, "의 카드는 0장이 되었습니다")
-        # if self.playerList.index(plainer) == (len(self.playerList) - 1):
-        #     print("마지막 순서")  # 개발용
-        #     select = plainer.card_select(len(self.playerList[0].deck))
-        #     plainer.card_append(self.playerList[0].deck.pop(select))
-        #     plainer.deck_delete()
-        # else:
-        #     print("일반순서")
-        #     select = plainer.card_select(len(self.playerList[self.playerList.index(plainer) + 1].deck))
-        #     plainer.card_append(self.playerList[self.playerList.index(plainer) + 1].deck.pop(select))
-        #     plainer.deck_delete()
+                next_card_len = self.playerList[0].deck.__len__()
+                select = self.playerList[idx].card_select(next_card_len)
+                next_card = self.playerList[0].deck.pop(select)
+                self.playerList[idx].card_append(next_card)
+            self.playerList[idx].deck_delete()
+            for x in self.playerList:
+                if x.deck.__len__() == 0:
+                    print("남은 사람 = ", le-1)
+                    self.playerList.remove(x)
+                    le -= 1
+            idx += 1
 
     def playerCheck(self):
         if len(self.playerList) == 1:
             print("게임 종료")
-            print("마지막 패배자는", self.playerList[0], "입니다")
             self.flag = False
 
     def deck_shuffle(self):
@@ -123,7 +117,7 @@ class system:
     def createObject(self, playNum):
         # self.playerList.append(self.p) #테스트로 ai 클래스만으로 실행 # ai클래스가 정상 작동시 주석처리 제거
         for x in range(playNum):
-            self.playerList.append(self.ai)
+            self.playerList.append(ai())
 
     def deck_share(self):
         random.shuffle(self.deckList)
@@ -133,6 +127,8 @@ class system:
             n += 1
             if n == len(self.playerList):
                 n = 0
+        for x in self.playerList:
+            x.deck_delete()
 
 
 if __name__ == "__main__":
