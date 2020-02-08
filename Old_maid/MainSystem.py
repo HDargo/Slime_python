@@ -115,7 +115,7 @@ class system:
         self.deckList.append("▶JOKER◀")
 
     def createObject(self, playNum):
-        # self.playerList.append(self.p) #테스트로 ai 클래스만으로 실행 # ai클래스가 정상 작동시 주석처리 제거
+        self.playerList.append(self.p) #테스트로 ai 클래스만으로 실행 # ai클래스가 정상 작동시 주석처리 제거
         for x in range(playNum):
             self.playerList.append(ai())
 
