@@ -24,7 +24,6 @@ from Old_maid.character.player import player
 
 class system:
     def __init__(self):
-        self.p = player()
         self.playerList = []
         self.deckList = []
         self.flag = True
@@ -64,7 +63,7 @@ class system:
 
             if idx >= le:
                 idx = 0
-
+            print("deck = ", self.playerList[idx].deck)
             if idx > le - 1:
                 next_card_len = self.playerList[idx + 1].deck.__len__()
                 select = self.playerList[idx].card_select(next_card_len)
@@ -115,7 +114,7 @@ class system:
         self.deckList.append("▶JOKER◀")
 
     def createObject(self, playNum):
-        self.playerList.append(self.p) #테스트로 ai 클래스만으로 실행 # ai클래스가 정상 작동시 주석처리 제거
+        self.playerList.append(player()) #테스트로 ai 클래스만으로 실행 # ai클래스가 정상 작동시 주석처리 제거
         for x in range(playNum):
             self.playerList.append(ai())
 
