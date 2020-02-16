@@ -1,5 +1,10 @@
 from hang_man.player_word.player import player
-from hang_man.player_word.word import word
 
-class main:
-    pass
+
+
+class hamg_man:
+
+    def temp(self):
+        #TODO 문자  입력  받기 메소드
+        pass
+
