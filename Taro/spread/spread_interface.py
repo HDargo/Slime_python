@@ -17,9 +17,9 @@ class spread_interface:
         if max == len(num):
             if len(numc) == len(num):
                 for x in num:
-                    if int(x) >= 21:
+                    if int(x) > 21:
                         return "ERROR"
-                    if int(x) <= 0:
+                    if int(x) < 0:
                         return "ERROR"
                 return num
             return "ERROR"
