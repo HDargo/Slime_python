@@ -8,3 +8,8 @@ class hamg_man:
         #TODO 문자  입력  받기 메소드
         pass
 
+    def quest(self):
+        #인풋 받기
+        pass
+
+    def

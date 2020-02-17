@@ -12,8 +12,10 @@ class player:
             question += " "
         return question
 
+    def check(self):
+        #검사
 
 a = player()
 print(a.a)
 print(a.question())
-print(a.a)
+
