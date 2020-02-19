@@ -21,12 +21,8 @@ class hamg_man:
     def temp(self):
         self.li.check(self.word)
         self.questionMethod()
-        while self.chance != 0:
-            self.chance -= 1
-            pass
 
-    def quest(self):
-        pass
+
 
 
 if __name__ == "__main__":
