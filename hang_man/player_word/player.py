@@ -1,21 +1,25 @@
-from hang_man.player_word.word import wordsel
-
-
 class player:
+
     def __init__(self):
-        self.a = wordsel()  # 랜덤  문자  받기
+        self.answer = []
 
-    def question(self):
-        question = ""
-        for x in range(len(self.a)):
-            question += "_"
-            question += " "
-        return question
+    def playerlist(self,aaa):
+        for x in range(len(aaa)):
+            self.answer += ["_"," "]
+        print(self.answer)
 
-    def check(self):
-        #검사
+    def check(self,test):
+        ans = input()
+        if ans in test:
+            print("True")
+            for x in range(len(test)):
+                print(test[x])
 
-a = player()
-print(a.a)
-print(a.question())
+        else:
+            print("틀렸습니다")
+        pass
+    #플레이어에서 답 입력 함수 실행 후 정답과 비교
+    #정답일 시 플레이어 클래스에 있는 정답 리스트에 추가
+    #오답일 시 넘어감
+
 
