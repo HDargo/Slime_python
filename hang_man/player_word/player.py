@@ -1,21 +1,31 @@
 import sys
+from hang_man.player_word.word import wordsel
 
 class player:
 
     def __init__(self):
         self.chance = 7
         self.answer = []
+        self.word = list(wordsel())
 
     def playerPlus(self,word_len):
         for x in range(len(word_len)):
             self.answer += "_"
 
-    def check(self,test):
+    def check(self, test):
         ans = input()
 
         if ans in test:
             for x in range(len(test)):
-                print(test[x])
+
+                if ans == self.word[x]:
+                    self.answer[x] = self.word[x]
+                    self.word[x] = "_"
+                    print (self.answer)
+
+                    if self.answer.count("_") == 0:
+                        print("승리!")
+                        sys.exit()
 
         else:
             print("틀렸습니다")
@@ -25,6 +35,7 @@ class player:
                 sys.exit()
             print("남은기회:",self.chance)
             self.check(test)
+
 
 
 
