@@ -9,8 +9,9 @@ class hamg_man:
         self.li = player()
         self.question = ""
         self.word = wordsel()  # 랜덤  문자  받기
+        print(self.word)
+        self.li.playerPlus(self.word)
         self.questionMethod()
-        self.li.playerlist(self.word)
 
     def questionMethod(self):
         for x in range(len(self.word)):

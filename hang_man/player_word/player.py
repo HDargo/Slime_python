@@ -6,10 +6,9 @@ class player:
         self.chance = 7
         self.answer = []
 
-    def playerlist(self,word_len):
+    def playerPlus(self,word_len):
         for x in range(len(word_len)):
-            self.answer.append("_")
-        print(self.answer)
+            self.answer += "_"
 
     def check(self,test):
         ans = input()
