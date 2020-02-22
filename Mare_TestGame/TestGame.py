@@ -3,13 +3,9 @@ from Mare_TestGame.Battle import fight
 from Mare_TestGame.Player import player
 
 
-
-
-
-
-
 class mainsys:
     def __init__(self):
+        self.pla = player()
         pass
 
     def shop(self):
@@ -22,10 +18,20 @@ class mainsys:
         fight()
 
     def statuspr(self):
-        pass
+        print("[1] 상태보기")
+        print("[2] 아이템보기")
+
+        choice = int(input())
+        if choice == 1:
+            self.pla.status()
+        if choice == 2:
+            self.pla.item()
 
     def save(self):
         pass
+
+
+mainsys().statuspr()
 
 
 class weapon:
