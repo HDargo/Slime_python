@@ -16,14 +16,15 @@ class fight:
 
     def battle(self,pla):
         while True:
-            if self.mon.hp <= 0:
-                print("승리!")
-                self.reward(pla)
-                break
-            elif pla.hp <= 0:
+            if pla.hp <= 0:
                 print("일단 정신 똑바로 차리고...도망쳐!")
                 pla.hp = 1
                 break
+            elif self.mon.hp <= 0:
+                print("승리!")
+                self.reward(pla)
+                break
+
             print("가능한 행동")
             print("[1] 공격한다","[2] 방어한다","[3] 아이템 사용","[4]튄다")
             print(pla.maxhp,"/",pla.hp,"내 공격력 =",pla.power,"내 방어력 =",pla.armor)
@@ -58,6 +59,7 @@ class fight:
 
 
     def reward(self,pla):
+        print("10골드 획득!")
         pla.money += 10
 
 

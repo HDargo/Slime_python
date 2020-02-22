@@ -6,11 +6,11 @@ class player:
         if self.new == 1:
             print("기본 아이템 지급")
             self.name = input("나의...이름은...")
-            self.hp = 100
+            self.hp = 50
             self.maxhp = 100
-            self.power = 1
-            self.armor = 100
-            self.money = 50
+            self.power = 5
+            self.armor = 2
+            self.money = 1
             self.inven = ["시작의 검","허름한 가죽옷","빨간포션"]
         elif self.new == 2:
             pass

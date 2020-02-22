@@ -13,16 +13,16 @@ class mainsys:
             try:
                 print("무엇을할까?")
                 print("[1] 상점가기")
-                print("[2] 휴식")
+                print("[2] 여관")
                 print("[3] 모험!")
                 print("[4] 내상태")
                 print("[5] 저장하기")
                 do = int(input())
 
                 if do == 1:
-                    self.shop()
+                    self.shop(self.pla)
                 elif do == 2:
-                    self.heal()
+                    self.heal(self.pla)
                 elif do == 3:
                     self.fight()
                 elif do == 4:
@@ -34,11 +34,22 @@ class mainsys:
             except:
                 print("오류 발생 다시입력해주세요")
 
-    def shop(self):
+    def shop(self,pla):
         pass
 
-    def heal(self):
-        pass
+    def heal(self,pla):
+        print("여관주인:여관은 하룻밤에 10골드야, 뭐 돈없으면...가진돈만 내")
+        print("[1] 한숨잔다","[2] 여관을 나간다")
+        choice = int(input())
+        if choice == 1:
+            if pla.money <= 9:
+                pla.money = 0
+                pla.hp = pla.maxhp
+                print("상쾌한 아침! 체력이 모두 회복되었다!...여관주인 아주머니한테 욕먹은거만 빼면")
+            else:
+                pla.money -= 10
+                pla.hp = pla.maxhp
+                print("상쾌한 아침! 체력이 모두 회복되었다!")
 
     def fight(self):
         fight().do(self.pla)
