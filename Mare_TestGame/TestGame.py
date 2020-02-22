@@ -1,3 +1,13 @@
+from Mare_TestGame.Shop import shop
+from Mare_TestGame.Battle import fight
+from Mare_TestGame.Player import player
+
+
+
+
+
+
+
 class mainsys:
     def __init__(self):
         pass
@@ -9,7 +19,7 @@ class mainsys:
         pass
 
     def fight(self):
-        pass
+        fight()
 
     def statuspr(self):
         pass
