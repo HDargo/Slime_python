@@ -53,7 +53,8 @@ class fight:
             elif whatdo == 3:
                 pass
             elif whatdo == 4:
-                pass
+                print("작전상 후퇴다!")
+                break
             else:
                 print("다시골라 주십시오")
 

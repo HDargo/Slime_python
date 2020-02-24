@@ -35,7 +35,7 @@ class mainsys:
                 print("오류 발생 다시입력해주세요")
 
     def shop(self,pla):
-        pass
+        shop().shop(self.pla)
 
     def heal(self,pla):
         print("여관주인:여관은 하룻밤에 10골드야, 뭐 돈없으면...가진돈만 내")
