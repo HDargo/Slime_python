@@ -21,7 +21,7 @@ class player:
                 if ans == self.word[x]:
                     self.answer[x] = self.word[x]
                     self.word[x] = "_"
-                    print (self.answer)
+
 
                     if self.answer.count("_") == 0:
                         print("승리!")
