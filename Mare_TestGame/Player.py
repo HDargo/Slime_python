@@ -1,5 +1,12 @@
 class player:
     def __init__(self):
+        self.weapon = []
+        self.armor = []
+        self.potion = []
+        self.weaponInv = []
+        self.armorInv = []
+        self.potionInv = []
+
         print("[1]새로운 시작")
         print("[2]이어하기")
         self.new = int(input())
@@ -10,31 +17,63 @@ class player:
             self.maxhp = 100
             self.power = 5
             self.armor = 2
-            self.money = 1
+            self.money = 999
             self.inven = []
-            self.weapon = []
-            self.clothes = []
+            self.weapon = [[0,"공기",0,0]]
+            self.clothes = [[1,"공기",0,0]]
         elif self.new == 2:
             pass
 
+    def getPower(self):
+        if self.weapon.__len__() != 0:
+            return int(self.weapon[0][2]) + self.power
 
     def status(self):
-        print("내이름 =",self.name)
-        print("현재 체력 =",self.hp)
-        print("최대 체력 =",self.maxhp)
-        print("공격력 =",self.power)
-        print("방어력 =",self.armor)
-        print("소지금 =",self.money)
-        if self.weapon != []:
-            print("장비중인 무기 = ",self.weapon)
-        elif self.weapon == []:
+        print("내이름 =", self.name)
+        print("현재 체력 =", self.hp)
+        print("최대 체력 =", self.maxhp)
+        print("공격력 =", self.power)
+        print("방어력 =", self.armor)
+        print("소지금 =", self.money)
+        if self.weapon != ["공기"]:
+            print("장비중인 무기 = ", self.weapon)
+        elif self.weapon == ["공기"]:
             print("장비중인 무기가 없습니다")
-        if self.clothes != []:
-            print("장비중인 방어구 =",self.clothes)
-        elif self.clothes == []:
+        if self.clothes != ["공기"]:
+            print("장비중인 방어구 =", self.clothes)
+        elif self.clothes == ["공기"]:
             print("장비중인 방어구가 없습니다.")
 
     def item(self):
-        print(self.inven)
+        while True:
+            print("[1] 아이템 확인하기")
+            print("[2] 장비 착용")
+            cho = int(input())
+            try:
+                if cho == 1:
+                    print(self.inven)
+                    break
+                if cho == 2:
+                    print(self.inven)
+                    print("장비할 아이템을 골라주십시오")  #TODO
+                    choice = int(input()) - 1
+                    if self.inven[choice][0] == 0:
+                        self.inven += self.weapon
+                        self.weapon = []
+                        self.weapon += [self.inven[choice]]
+                        self.inven.pop(choice)
+                        print(self.weapon)
+                        break
 
-
+                    if self.inven[choice][0] == 1:
+                        self.inven += self.clothes
+                        self.clothes = []
+                        self.clothes += [self.inven[choice]]
+                        self.inven.pop(choice)
+                        print(self.clothes)
+                        break
+                    if self.inven[choice][0] == 2:
+                        print("소비아이템은 장비할수 없습니다")
+                        break
+            except:
+                pass

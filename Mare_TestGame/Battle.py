@@ -33,29 +33,48 @@ class fight:
             whatdo = int(input())
 
             if whatdo == 1:
-                self.mon.hp -= pla.power
-                print(self.mon.name,"에게",pla.power,"만큼의 피해를 입혔다!")
+                self.mon.hp -= pla.power + pla.weapon[0][2]
+                print(self.mon.name,"에게",pla.power + pla.weapon[0][2],"만큼의 피해를 입혔다!")
                 time.sleep(1)
-                if pla.armor >= self.mon.power:
+                if pla.armor + pla.clothes[0][2] >= self.mon.power:
                     print("이 적은 당신에게 피해를 입히기엔 너무 약하다")
                     time.sleep(1)
                 else:
-                    damage = self.mon.power - pla.armor
+                    damage = self.mon.power - (pla.armor + pla.clothes[0][2] )
                     pla.hp -= damage
                     print("적에게",damage,"만큼의 피해를 입었다")
                     time.sleep(1)
 
             elif whatdo == 2:
-                shild = (pla.armor)*2
+                shild = (pla.armor + pla.clothes[0][2])*2
                 if shild > self.mon.power:
                     print("적절한 방어!")
-
                 else:
                     damage = self.mon.power - shild
                     pla.hp -= damage
                     print("막았음애도 불구하고",damage,"만큼의 피해를 입었다!")
             elif whatdo == 3:
-                pass
+                print(pla.inven)
+                print("무엇을 쓸까?")
+                cho = int(input()) - 1
+                if pla.inven[cho][0] == 2:
+                    if pla.hp + pla.inven[cho][2] < pla.maxhp:
+                        pla.hp += pla.inven[cho][2]
+                        print(pla.inven[cho][2],"만큼 회복해서","체력이",pla.hp,"이 되었다!")
+                    elif pla.hp +pla.inven[cho][2] >= pla.maxhp:
+                        pla.hp = pla.maxhp
+                        print("완전히 회복했다!")
+                    if pla.armor + pla.clothes[0][2] >= self.mon.power:
+                        print("이 적은 당신에게 피해를 입히기엔 너무 약하다")
+                        time.sleep(1)
+                    else:
+                        damage = self.mon.power - (pla.armor + pla.clothes[0][2])
+                        pla.hp -= damage
+                        print("적에게", damage, "만큼의 피해를 입었다")
+                        time.sleep(1)
+                elif pla.inven[cho][0] != 2:
+                    print("전투 중에는 소비 아이템만 사용할수 있습니다")
+
             elif whatdo == 4:
                 print("작전상 후퇴다!")
                 break
