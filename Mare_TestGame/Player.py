@@ -1,11 +1,5 @@
 class player:
     def __init__(self):
-        self.weapon = []
-        self.armor = []
-        self.potion = []
-        self.weaponInv = []
-        self.armorInv = []
-        self.potionInv = []
 
         print("[1]새로운 시작")
         print("[2]이어하기")

@@ -1,6 +1,7 @@
 from Mare_TestGame.Shop import shop
 from Mare_TestGame.Battle import fight
 from Mare_TestGame.Player import player
+from Mare_TestGame.Save import Save
 import time
 
 class mainsys:
@@ -28,7 +29,7 @@ class mainsys:
                 elif do == 4:
                     self.statuspr()
                 elif do == 5:
-                    self.save()
+                    self.save(self.pla)
                 else:
                     print("숫자를 잘못 골랐습니다")
             except:
@@ -69,8 +70,8 @@ class mainsys:
             self.pla.item()
         self.whatdo()
 
-    def save(self):
-        pass
+    def save(self,pla):
+        Save().Save(pla)
 
 
 mainsys()
