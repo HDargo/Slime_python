@@ -1,7 +1,7 @@
 from Mare_TestGame.Shop import shop
 from Mare_TestGame.Battle import fight
 from Mare_TestGame.Player import player
-
+import time
 
 class mainsys:
     def __init__(self):
@@ -45,11 +45,15 @@ class mainsys:
             if pla.money <= 9:
                 pla.money = 0
                 pla.hp = pla.maxhp
+                time.sleep(1)
                 print("상쾌한 아침! 체력이 모두 회복되었다!...여관주인 아주머니한테 욕먹은거만 빼면")
+                time.sleep(1)
             else:
                 pla.money -= 10
                 pla.hp = pla.maxhp
+                time.sleep(1)
                 print("상쾌한 아침! 체력이 모두 회복되었다!")
+                time.sleep(1)
 
     def fight(self):
         fight().do(self.pla)

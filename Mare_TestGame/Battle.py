@@ -1,4 +1,5 @@
 from Mare_TestGame.Field import field
+import time
 
 class fight:
     def __init__(self):
@@ -34,12 +35,15 @@ class fight:
             if whatdo == 1:
                 self.mon.hp -= pla.power
                 print(self.mon.name,"에게",pla.power,"만큼의 피해를 입혔다!")
+                time.sleep(1)
                 if pla.armor >= self.mon.power:
                     print("이 적은 당신에게 피해를 입히기엔 너무 약하다")
+                    time.sleep(1)
                 else:
                     damage = self.mon.power - pla.armor
                     pla.hp -= damage
                     print("적에게",damage,"만큼의 피해를 입었다")
+                    time.sleep(1)
 
             elif whatdo == 2:
                 shild = (pla.armor)*2
@@ -62,6 +66,7 @@ class fight:
     def reward(self,pla):
         print("10골드 획득!")
         pla.money += 10
+        time.sleep(2)
 
 
 

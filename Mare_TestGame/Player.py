@@ -10,8 +10,8 @@ class player:
             self.maxhp = 100
             self.power = 5
             self.armor = 2
-            self.money = 999
-            self.inven = ["시작의 검","허름한 가죽옷","빨간포션"]
+            self.money = 1
+            self.inven = []
             self.weapon = []
             self.clothes = []
         elif self.new == 2:
