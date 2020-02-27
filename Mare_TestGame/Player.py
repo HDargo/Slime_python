@@ -12,6 +12,8 @@ class player:
             self.armor = 2
             self.money = 999
             self.inven = ["시작의 검","허름한 가죽옷","빨간포션"]
+            self.weapon = []
+            self.clothes = []
         elif self.new == 2:
             pass
 
@@ -23,6 +25,16 @@ class player:
         print("공격력 =",self.power)
         print("방어력 =",self.armor)
         print("소지금 =",self.money)
+        if self.weapon != []:
+            print("장비중인 무기 = ",self.weapon)
+        elif self.weapon == []:
+            print("장비중인 무기가 없습니다")
+        if self.clothes != []:
+            print("장비중인 방어구 =",self.clothes)
+        elif self.clothes == []:
+            print("장비중인 방어구가 없습니다.")
 
     def item(self):
         print(self.inven)
+
+

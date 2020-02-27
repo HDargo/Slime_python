@@ -12,6 +12,7 @@ class shop:
                     if pla.money >= 30:
                         pla.money -= 30
                         pla.inven += ["좋은검"]
+                        print("구매완료!")
                     elif pla.money < 30:
                         print("형씨, 돈이모자라")
 
