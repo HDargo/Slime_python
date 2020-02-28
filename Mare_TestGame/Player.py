@@ -1,3 +1,5 @@
+from Mare_TestGame.Load import Load
+
 class player:
     def __init__(self):
 
@@ -16,8 +18,15 @@ class player:
             self.weapon = [[0,"공기",0,0]]
             self.clothes = [[1,"공기",0,0]]
         elif self.new == 2:
-            pass
-
+            self.name = Load().Load()["name"]
+            self.armor =int( Load().Load()["armor"])
+            self.clothes = Load().Load()["clothes"]
+            self.weapon = Load().Load()["weapon"]
+            self.maxhp = Load().Load()["maxhp"]
+            self.power = Load().Load()["power"]
+            self.inven = Load().Load()["inven"]
+            self.hp = Load().Load()["hp"]
+            self.money = Load().Load()["money"]
     def getPower(self):
         if self.weapon.__len__() != 0:
             return int(self.weapon[0][2]) + self.power
