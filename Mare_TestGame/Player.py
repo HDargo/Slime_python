@@ -1,5 +1,6 @@
 from Mare_TestGame.Load import Load
 
+
 class player:
     def __init__(self):
 
@@ -9,17 +10,17 @@ class player:
         if self.new == 1:
             print("기본 아이템 지급")
             self.name = input("나의...이름은...")
-            self.hp = 50
+            self.hp = 100
             self.maxhp = 100
             self.power = 5
-            self.armor = 2
-            self.money = 999
+            self.armor = 0
+            self.money = 50
             self.inven = []
-            self.weapon = [[0,"공기",0,0]]
-            self.clothes = [[1,"공기",0,0]]
+            self.weapon = [[0, "공기", 0, 0]]
+            self.clothes = [[1, "공기", 0, 0]]
         elif self.new == 2:
             self.name = Load().Load()["name"]
-            self.armor =int( Load().Load()["armor"])
+            self.armor = int(Load().Load()["armor"])
             self.clothes = Load().Load()["clothes"]
             self.weapon = Load().Load()["weapon"]
             self.maxhp = Load().Load()["maxhp"]
@@ -27,6 +28,7 @@ class player:
             self.inven = Load().Load()["inven"]
             self.hp = Load().Load()["hp"]
             self.money = Load().Load()["money"]
+
     def getPower(self):
         if self.weapon.__len__() != 0:
             return int(self.weapon[0][2]) + self.power
@@ -58,7 +60,7 @@ class player:
                     break
                 if cho == 2:
                     print(self.inven)
-                    print("장비할 아이템을 골라주십시오")  #TODO
+                    print("장비할 아이템을 골라주십시오")  # TODO
                     choice = int(input()) - 1
                     if self.inven[choice][0] == 0:
                         self.inven += self.weapon

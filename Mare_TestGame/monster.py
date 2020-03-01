@@ -8,7 +8,8 @@ monsters  = []
 class  field_mons_generator:
     def grasa_generator(self):
         slime  = monster("slime",5,10)
-        orc  = monster("orc",30,50)
+        orc  = monster("orc",15,50)
+        goblin = monster("goblin",20,20)
 
         monsters.append(slime)
         monsters.append(orc)
