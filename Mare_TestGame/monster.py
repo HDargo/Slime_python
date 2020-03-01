@@ -13,5 +13,6 @@ class  field_mons_generator:
 
         monsters.append(slime)
         monsters.append(orc)
+        monster.append(goblin)
 
         return  monsters
