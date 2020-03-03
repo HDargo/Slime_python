@@ -9,7 +9,7 @@ monsters = []
 
 
 class field_mons_generator:
-    def grasa_generator(self):
+    def grass_generator(self):
         slime = monster("slime", 5, 10)
         orc = monster("orc", 15, 50)
         goblin = monster("goblin", 20, 20)

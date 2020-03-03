@@ -10,7 +10,7 @@ class field:
     def mon(self):
         self.want = int(input())
         if self.want == 1:
-            return random.choice(field_mons_generator().grasa_generator())
+            return random.choice(field_mons_generator().grass_generator())
 
     def reward(self):
         pass

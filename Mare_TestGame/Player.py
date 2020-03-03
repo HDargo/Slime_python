@@ -29,9 +29,6 @@ class player:
             self.hp = Load().Load()["hp"]
             self.money = Load().Load()["money"]
 
-    def getPower(self):
-        if self.weapon.__len__() != 0:
-            return int(self.weapon[0][2]) + self.power
 
     def status(self):
         print("내이름 =", self.name)
