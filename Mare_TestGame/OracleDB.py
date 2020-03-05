@@ -2,6 +2,7 @@ import cx_Oracle
 import os
 
 weapon = []
+Mon = []
 os.putenv(
     "NLS_LANG", "KOREAN"
 )
@@ -56,6 +57,16 @@ class DB:
             self.list.insert(0,2)
             self.list2 += [self.list]
         return self.list2
+
+    def MonDB(self):
+        cursor.execute("""
+
+                   select  *
+                   from  monster
+
+               """)
+        for name in cursor:
+            self.list = name
 
     def findWeaponDb(self, name):
         cursor.execute("""

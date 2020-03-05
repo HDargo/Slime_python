@@ -13,14 +13,14 @@ class player:
             self.hp = 100
             self.maxhp = 100
             self.power = 5
-            self.armor = 0
-            self.money = 50
+            self.armor = 1
+            self.money = 30
             self.inven = []
             self.weapon = [[0, "공기", 0, 0]]
             self.clothes = [[1, "공기", 0, 0]]
         elif self.new == 2:
             self.name = Load().Load()["name"]
-            self.armor = int(Load().Load()["armor"])
+            self.armor = Load().Load()["armor"]
             self.clothes = Load().Load()["clothes"]
             self.weapon = Load().Load()["weapon"]
             self.maxhp = Load().Load()["maxhp"]

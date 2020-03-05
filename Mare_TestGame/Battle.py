@@ -10,6 +10,7 @@ class fight:
         print("어디로 갈까?")
         print("필드 종류")
         print("[1] 초원")
+        print("[2] 숲")
         self.mon = field().mon()
         print("야생의", self.mon.name, "와(과) 조우했다!", "체력 =", self.mon.hp, "공격력 = ", self.mon.power)
         self.battle(pla)
