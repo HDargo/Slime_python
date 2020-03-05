@@ -11,6 +11,6 @@ class field:
         self.want = int(input())
         if self.want == 1:
             return random.choice(field_mons_generator().grass_generator())
+        elif self.want == 2:
+            return random.choice(field_mons_generator().forest_generator())
 
-    def reward(self):
-        pass

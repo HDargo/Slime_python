@@ -81,9 +81,9 @@ class fight:
                 print("다시골라 주십시오")
 
     def reward(self, pla):
-        print("10골드 획득!")
-        pla.money += 10
-        time.sleep(2)
+        print(self.mon.reward,"골드 획득!")
+        pla.money += self.mon.reward
+        time.sleep(1.5)
 
 
 fight()
